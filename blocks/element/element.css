@@ -1,0 +1,19 @@
+.element {
+    max-width: 282px;
+    min-height: 361px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 959px) {
+    .element {
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-width: 389px) {
+    .element {
+        max-width: 282px;
+    }
+}
