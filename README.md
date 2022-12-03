@@ -20,4 +20,5 @@
 * HTML5
 * CSS3
 * JavaScript
->>>>>>> ccf3368 (Залить проект на GH)
+---
+### Ссылка на GitHub Pages: https://andrewsenichkin.github.io/mesto/index.html
