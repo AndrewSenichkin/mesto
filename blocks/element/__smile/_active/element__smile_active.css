@@ -1,0 +1,4 @@
+.element__smile_active {
+    opacity: 1;
+    background-image: url(../../../../image/like_active.svg);
+}

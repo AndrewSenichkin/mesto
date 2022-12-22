@@ -9,6 +9,11 @@
     padding: 0;
     top: -40px;
     right: -40px;
+    transition: visibility 0.5s, opacity 0.6s linear;
+}
+
+.popup__close-icon:hover {
+    opacity: .6;
 }
 
 @media screen and (max-width: 549px) {

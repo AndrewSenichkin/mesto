@@ -9,6 +9,7 @@
     background-size: contain;
     background-color: transparent;
     cursor: pointer;
+    transition: visibility 0.1s, opacity 0.3s linear;
 }
 
 .element__smile:hover {

@@ -12,6 +12,7 @@
     border: none;
     cursor: pointer;
     right: 0;
+    transition: visibility 0.1s, opacity 0.4s linear;
 }
 
 @media screen and (max-width: 599px) {
