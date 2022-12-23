@@ -23,6 +23,7 @@ const closeImg = popupImg.querySelector('.popup__close-icon');//Кнопка з�
 const createTodo = (value) => {
     const createCard = template.querySelector('.element').cloneNode(true);
     createCard.querySelector('.element__image').src = value.link;
+    createCard.querySelector('.element__image').alt = value.name;
     createCard.querySelector('.element__title').textContent = value.name;
     createCard.querySelector('.element__trash').addEventListener('click', () => {
         createCard.remove();
