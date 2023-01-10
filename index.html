@@ -32,10 +32,16 @@
         <div class="popup__container">
             <h2 class="popup__title">Редактировать профиль</h2>
             <button class="popup__close-icon" type="button"></button>
-            <form class="popup__form" name="form-popup">
+            <form class="popup__form" name="form-popup" novalidate>
                 <fieldset class="popup__fieldset">
-                    <input class="popup__input popup__input_type_name" name="inputName" type="text" placeholder="Имя">
-                    <input class="popup__input popup__input_type_more" name="inputMore" type="text" placeholder="Тип деятельности">
+                <label class="popup__label">
+                    <input class="popup__input popup__input_type_name" id="inputName"  name="inputName" type="text" placeholder="Имя" minlength="2" maxlength="40" required>
+                    <span class="popup__input-error inputName-error"></span>
+                </label>
+                <label class="popup__label">
+                    <input class="popup__input popup__input_type_more" id="inputMore"  name="inputMore" type="text" placeholder="О себе" minlength="2" maxlength="200" required>
+                    <span class="popup__input-error inputMore-error"></span>
+                </label>
                 </fieldset>
                 <button class="popup__submit" type="submit">Сохранить</button>
             </form>
@@ -45,10 +51,16 @@
         <div class="popup__container">
             <h2 class="popup__title">Новое место</h2>
             <button class="popup__close-icon" type="button"></button>
-            <form class="popup__form popup__form_card" name="form-addCard">
+            <form class="popup__form popup__form_card" name="form-addCard" novalidate>
                 <fieldset class="popup__fieldset">
-                    <input class="popup__input popup__input_card-name" name="inputCardName" type="text" placeholder="Название">
-                    <input class="popup__input popup__input_card-url" name="inputCardUrl" type="url" placeholder="Ссылка на картинку">
+                <label class="popup__label">
+                    <input class="popup__input popup__input_card-name" id="inputCardName" name="inputCardName" type="text" placeholder="Название" minlength="2" maxlength="30" required>
+                    <span class="popup__input-error inputCardName-error"></span>
+                </label>
+                <label class="popup__label">
+                    <input class="popup__input popup__input_card-url" id="inputCardUrl" name="inputCardUrl" type="url" placeholder="Ссылка на картинку" required>
+                    <span class="popup__input-error inputCardUrl-error"></span>
+                </label> 
                 </fieldset>    
                 <button class="popup__submit" type="submit">Создать</button>
             </form>
@@ -74,6 +86,8 @@
     <footer class="footer">
         <p class="footer__copyright">&copy; 2022 Senichkin Andrew</p>
     </footer>
+    <script src="./script/validateConfig.js"></script>
+    <script src="./script/validate.js"></script>
     <script src="./script/initCards.js"></script>
     <script src="./script/index.js"></script>
 </body>

@@ -36,6 +36,14 @@ const createTodo = (value) => {
     });
     return createCard;
 }
+
+function closePopupEsc(event) {
+    if(event.code == 'Escape') {
+        const popup = document.querySelector('.popup_opened');
+        closePopup(popup);
+    }
+}
+
 function openImage (card, link) {
     const title = card.querySelector('.element__title').textContent;
     photoImg.src = link;
@@ -55,11 +63,21 @@ function render() {
 }
 render();
 
+function closePopupOverlay(evt) {
+    if(evt.target.classList.contains('popup')) {
+        closePopup(evt.target);
+    }
+}
+
 function openPopup (openPopup) {
     openPopup.classList.add('popup_opened');
+    document.addEventListener('click', closePopupOverlay);
+    document.addEventListener('keydown', closePopupEsc);
 }
 function closePopup(closePopup) {
     closePopup.classList.remove('popup_opened');
+    document.removeEventListener('click', closePopupOverlay);
+    document.removeEventListener('keydown', closePopupEsc);
 }
 function sendForm (evt) {
     evt.preventDefault();

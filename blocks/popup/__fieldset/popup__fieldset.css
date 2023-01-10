@@ -2,7 +2,7 @@
     width: 100%;
     border: none;
     padding: 0;
-    margin-bottom: 48px;
+    margin-bottom: 38px;
     display: flex;
     flex-direction: column;
     row-gap: 17px;
@@ -12,7 +12,7 @@
     .popup__fieldset {
         margin-left: 22px;
         margin-right: 22px;
-        margin-bottom: 45px;
-        row-gap: 29px;
+        margin-bottom: 23px;
+        row-gap: 26px;
     }
 }
