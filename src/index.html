@@ -5,16 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto</title>
-    <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="page">
     <header class="header">
-        <img class="header__logo" src="./image/Vector-mesto.svg" alt="Место-России">
+        <img class="header__logo" src="<%=require('./image/Vector-mesto.svg')%>" alt="Место-России">
     </header>
     <main class="content">
         <section class="profile">
             <div class="profile__container">
-                <img class="profile__avatar" src="./image/image.jpg" alt="Жак-Ив Кусто">
+                <img class="profile__avatar" src="<%=require('./image/image.jpg')%>" alt="Жак-Ив Кусто">
                 <div class="profile__info">
                     <div class="profile__container-title">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -32,7 +31,7 @@
         <div class="popup__container">
             <h2 class="popup__title">Редактировать профиль</h2>
             <button class="popup__close-icon" type="button"></button>
-            <form class="popup__form" name="form-popup" novalidate>
+            <form class="popup__form" name="formPopup" novalidate>
                 <fieldset class="popup__fieldset">
                 <label class="popup__label">
                     <input class="popup__input popup__input_type_name" id="inputName"  name="inputName" type="text" placeholder="Имя" minlength="2" maxlength="40" required>
@@ -51,14 +50,14 @@
         <div class="popup__container">
             <h2 class="popup__title">Новое место</h2>
             <button class="popup__close-icon" type="button"></button>
-            <form class="popup__form popup__form_card" name="form-addCard" novalidate>
+            <form class="popup__form popup__form_card" name="formAddCard" novalidate>
                 <fieldset class="popup__fieldset">
                 <label class="popup__label">
-                    <input class="popup__input popup__input_card-name" id="inputCardName" name="inputCardName" type="text" placeholder="Название" minlength="2" maxlength="30" required>
+                    <input class="popup__input popup__input_card-name" id="inputCardName" name="name" type="text" placeholder="Название" minlength="2" maxlength="30" required>
                     <span class="popup__input-error inputCardName-error"></span>
                 </label>
                 <label class="popup__label">
-                    <input class="popup__input popup__input_card-url" id="inputCardUrl" name="inputCardUrl" type="url" placeholder="Ссылка на картинку" required>
+                    <input class="popup__input popup__input_card-url" id="inputCardUrl" name="link" type="url" placeholder="Ссылка на картинку" required>
                     <span class="popup__input-error inputCardUrl-error"></span>
                 </label> 
                 </fieldset>    
@@ -73,7 +72,7 @@
             <button class="popup__close-icon"></button>
         </figure>
     </div>
-    <template id="todo-item-template">
+    <template id="todo-item-template" class="todo-item-template">
         <article class="element">
             <button class="element__trash" type="button"></button>
             <img class="element__image" src="#" alt="Фото мест-России">
@@ -86,11 +85,5 @@
     <footer class="footer">
         <p class="footer__copyright">&copy; 2022 Senichkin Andrew</p>
     </footer>
-    <script type="module" src="./script/validateConfig.js"></script>
-    <script type="module" src="./script/validate.js"></script>
-    <script type="module" src="./script/initCards.js"></script>
-    <script type="module" src="./script/Card.js"></script>
-    <script type="module" src="./script/FormValidator.js"></script>
-    <script type="module" src="./script/index.js"></script>
 </body>
 </html>

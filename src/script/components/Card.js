@@ -1,4 +1,4 @@
-class Card {
+export default class Card {
     constructor(date, templateSelector, openImage) {
         this._name = date.name;
         this._link = date.link;
@@ -6,10 +6,10 @@ class Card {
         this._openImage = openImage;
     }
     _getTemplate() {
-        this._element = document.querySelector(this._templateSelector).content.cloneNode(true);
+        this._element = document.querySelector(this._templateSelector).content.querySelector('.element').cloneNode(true);
         return this._element;
     }
-    generateCard() {
+    generateCard = () => {
         this._newCard = this._getTemplate();
         this._title = this._newCard.querySelector('.element__title');
         this._elementImage = this._newCard.querySelector('.element__image');
@@ -21,6 +21,7 @@ class Card {
         this._setEventListeners();
         return this._newCard;
     }
+    
     _toggleLike() {
         this._like.classList.toggle('element__smile_active');
     }
@@ -39,4 +40,3 @@ class Card {
         });
     }
 }
-export {Card};
