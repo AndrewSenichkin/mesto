@@ -31,7 +31,7 @@ async function submitFormProfile(data) {
 async function submitFormAddCard(data) {
     try {
         const newCard = await api.addNewCard(data);
-        SectionForCard.addItem(createNewCard(newCard));
+        sectionForCard.addItem(createNewCard(newCard));
     } catch (err) {
         return console.log(`Ошибка: ${err}`);
     }
@@ -48,7 +48,7 @@ Promise.all([api.getAboutUserInfo(), api.getInitialCards()])
 .then(([userProfile, cards]) => {
     userInfo.setUserInfo(userProfile);
     userId = userProfile._id;
-    SectionForCard.renderItems(cards);
+    sectionForCard.renderItems(cards);
 })
 .catch(err => console.log(`Ошибка: ${err}`));
 
@@ -58,14 +58,14 @@ function createNewCard(item) {
         try {
             const response = await api.addLike(item._id);
             card.like();
-            card.likeCount(response);
+            card.setLikesCounter(response);
         } catch (err) { return console.log(`Ошибка: ${err}`);}
     },
     async () => {
         try {
             const response = await api.deleteLike(item._id);
             card.disLike();
-            card.likeCount(response);
+            card.setLikesCounter(response);
         } catch (err) {return console.log(`Ошибка: ${err}`);}
     },
     () => popupConfirm.open(card)
@@ -86,9 +86,9 @@ const popupConfirm = new PopupConfirm(
 function openImage(name, link) {
     popupOpenImage.open(name, link)
 }
-const SectionForCard = new Section({ renderer: (item) => {
+const sectionForCard = new Section({ renderer: (item) => {
     const card = createNewCard(item);
-    SectionForCard.addItem(card);
+    sectionForCard.addItem(card);
     },
 }, 
 '.elements'
@@ -115,16 +115,22 @@ popupAddCardValidation.enableValidation();
 buttonEditProfile.addEventListener('click', () => {
     popupEditForm.open();
     popupEditForm.setInputValue(userInfo.getUserInfo());
-    popupProfileValidation.disabledButtonAfterSubmit();
+    popupProfileValidation.disableButton();
 }, false);
 
 buttonOpenPopupCard.addEventListener('click', () => {
     openPopupCard.open();
-    popupAddCardValidation.disabledButtonAfterSubmit();
+    popupAddCardValidation.disableButton();
 }, false);
 
 profileUpdateAvatar.addEventListener('click', () => {
     popupAvatar
     .open();
-    validatorFormUpdateAvatar.disabledButtonAfterSubmit();
+    validatorFormUpdateAvatar.disableButton();
 })
+
+popupEditForm.setEventListeners();
+openPopupCard.setEventListeners();
+popupOpenImage.setEventListeners();
+popupAvatar.setEventListeners();
+popupConfirm.setEventListeners();

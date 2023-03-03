@@ -6,14 +6,6 @@ export default class PopupWithForm extends Popup {
         this._callbackSubmitForm = callbackSubmitForm;
         this._form = this._popup.querySelector('.popup__form');
         this._inputs = [...this._form.querySelectorAll('.popup__input')];
-        this._form.addEventListener('submit', (evt) => {
-            evt.preventDefault();
-            const textReplace = evt.submitter.textContent;
-            evt.submitter.textContent = 'Сохранение...';
-            this._callbackSubmitForm(this._getInputValues())
-            .then(() => this.close())
-            .finally(() => {evt.submitter.textContent = textReplace})
-        })
     }
     _getInputValues() {
         const values = {}
@@ -31,5 +23,16 @@ export default class PopupWithForm extends Popup {
             input.value = data[input.name]
         })
         return this._inputs
+    }
+    setEventListeners() {
+        super.setEventListeners()
+        this._form.addEventListener('submit', (evt) => {
+            evt.preventDefault();
+            const textReplace = evt.submitter.textContent;
+            evt.submitter.textContent = 'Сохранение...';
+            this._callbackSubmitForm(this._getInputValues())
+            .then(() => this.close())
+            .finally(() => {evt.submitter.textContent = textReplace})
+        })
     }
 }

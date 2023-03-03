@@ -31,7 +31,7 @@ export default class Card {
          if (this._ownerId !== this._userId) {this._trash.remove()}
 
          this._setEventListeners();
-         this._userLiked();
+         this._likedUser();
          return this._newCard;
     }
     
@@ -41,14 +41,14 @@ export default class Card {
     disLike() {
         this._likeButton.classList.remove('element__smile_active')
     }
-    _userLiked() {
+    _likedUser() {
         this._likes.forEach((elementId) => {
             if(elementId._id === this._userId) {this.like()}
             else {this.disLike()}
         })
     }
 
-    likeCount(res) {
+    setLikesCounter(res) {
         this._likesCount.textContent = `${res.likes.length}`;
     }
     remove() {

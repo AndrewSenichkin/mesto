@@ -91,10 +91,12 @@
             <button class="popup__close-icon" type="button"></button>
             <h2 class="popup__title">Обновить аватар</h2>
           <form class="popup__form" name="editAvatarForm" id="editAvatarForm" novalidate> 
-            <label class="popup__label">
-                <input class="popup__input popup__input_type_link-avatar" id="nameAvatarInput" name="avatar" type="url" placeholder="Введите URL" required>
-                <span class="popup__input-error nameAvatarInput-error"></span>
-            </label>
+            <fieldset class="popup__fieldset">
+                <label class="popup__label">
+                    <input class="popup__input popup__input_type_link-avatar" id="nameAvatarInput" name="avatar" type="url" placeholder="Введите URL" required>
+                    <span class="popup__input-error nameAvatarInput-error"></span>
+                </label>
+            </fieldset>
             <button class="popup__submit" type="submit">Сохранить</button>
           </form>
         </div>
