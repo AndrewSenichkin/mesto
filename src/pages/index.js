@@ -1,15 +1,15 @@
 import './index.css';
-import Card from "./script/components/Card.js";
-import {FormValidator} from "./script/components/FormValidator.js";
-import Section from "./script/components/Section.js";
-import PopupWithImage from "./script/components/PopupWithImage.js";
-import PopupConfirm from './script/components/popupConfirm.js';
-import UserInfo from "./script/components/UserInfo.js";
-import PopupWithForm from "./script/components/PopupWithForm.js";
-import {validateConfig}  from "./script/variables/validateConfig.js";
-import {popupConfig} from "./script/variables/popupConfig.js";
-import {formProfile, formAddCard, inputName, inputMore, buttonOpenPopupCard, buttonEditProfile, avatar, formUpdateAvatar, profileUpdateAvatar} from './script/variables/constants.js';
-import Api from './script/components/Api.js';
+import Card from "../components/Card"; 
+import {FormValidator} from "../components/FormValidator.js";
+import Section from "../components/Section.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupConfirm from '../components/popupConfirm.js';
+import UserInfo from "../components/UserInfo.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import {validateConfig}  from "../variables/validateConfig.js";
+import {popupConfig} from "../variables/popupConfig.js";
+import {formProfile, formAddCard, inputName, inputMore, buttonOpenPopupCard, buttonEditProfile, avatar, formUpdateAvatar, profileUpdateAvatar} from '../variables/constants.js';
+import Api from '../components/Api.js';
 let userId;
 const api = new Api({
     baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-60',

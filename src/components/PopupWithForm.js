@@ -7,7 +7,6 @@ export default class PopupWithForm extends Popup {
         this._form = this._popup.querySelector('.popup__form');
         this._inputs = [...this._form.querySelectorAll('.popup__input')];
         this._form.addEventListener('submit', (evt) => {
-            debugger
             evt.preventDefault();
             const textReplace = evt.submitter.textContent;
             evt.submitter.textContent = 'Сохранение...';
@@ -28,7 +27,6 @@ export default class PopupWithForm extends Popup {
         this._form.reset();
     }
     setInputValue(data) {
-        debugger
         this._inputs.forEach((input) => {
             input.value = data[input.name]
         })
