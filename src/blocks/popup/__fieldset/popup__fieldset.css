@@ -2,10 +2,9 @@
     width: 100%;
     border: none;
     padding: 0;
-    margin-bottom: 38px;
     display: flex;
     flex-direction: column;
-    row-gap: 17px;
+    row-gap: 27px;
 }
 
 @media screen and (max-width: 549px) {

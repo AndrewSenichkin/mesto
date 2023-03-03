@@ -15,6 +15,8 @@
 @import url(blocks/profile/__more/profile__more.css);
 @import url(blocks/profile/__edit-button/profile__edit-button.css);
 @import url(blocks/profile/__add-button/profile__add-button.css);
+@import url(blocks/profile/__edit-avatar/profile__edit-avatar.css);
+@import url(blocks/profile/__wrapper/porifle__wrapper.css);
 
 @import url(blocks/elements/elements.css);
 @import url(blocks/element/element.css);
@@ -24,6 +26,8 @@
 @import url(blocks/element/__smile/element__smile.css);
 @import url(blocks/element/__smile/_active/element__smile_active.css);
 @import url(blocks/element/__trash/element__trash.css);
+@import url(blocks/element/__container-like/element__container-like.css);
+@import url(blocks/element/__count-likes/element__count-likes.css);
 
 @import url(blocks/footer/footer.css);
 @import url(blocks/footer/__copyright/footer__copyright.css);
@@ -46,3 +50,7 @@
 @import url(blocks/popup/__image/popup__image.css);
 @import url(blocks/popup/__container-image/popup__container-image.css);
 @import url(blocks/popup/_image/popup_image.css);
+@import url(blocks/popup/__confirm/popup__confirm.css);
+@import url(blocks/popup/__title/_areSure/popup__title_areSure.css);
+@import url(blocks/popup/__submit/_areSure/popup__submit_areSure.css);
+@import url(blocks/popup/__avatar/popup__avatar.css);

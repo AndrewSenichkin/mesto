@@ -13,7 +13,12 @@
     <main class="content">
         <section class="profile">
             <div class="profile__container">
-                <img class="profile__avatar" src="<%=require('./image/image.jpg')%>" alt="Жак-Ив Кусто">
+                <div class="porifle__wrapper">
+                    <img class="profile__avatar" src="<%=require('./image/image.jpg')%>" alt="Жак-Ив Кусто">
+                    <button class="profile__edit-avatar" type="button">
+                        <img class="profile__edit-pen" src="<%=require('./image/VectorPen.svg')%>" alt="Письменная ручка">
+                    </button>
+                </div>
                 <div class="profile__info">
                     <div class="profile__container-title">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -34,11 +39,11 @@
             <form class="popup__form" name="formPopup" novalidate>
                 <fieldset class="popup__fieldset">
                 <label class="popup__label">
-                    <input class="popup__input popup__input_type_name" id="inputName"  name="inputName" type="text" placeholder="Имя" minlength="2" maxlength="40" required>
+                    <input class="popup__input popup__input_type_name" id="inputName"  name="name" type="text" placeholder="Имя" minlength="2" maxlength="40" required>
                     <span class="popup__input-error inputName-error"></span>
                 </label>
                 <label class="popup__label">
-                    <input class="popup__input popup__input_type_more" id="inputMore"  name="inputMore" type="text" placeholder="О себе" minlength="2" maxlength="200" required>
+                    <input class="popup__input popup__input_type_more" id="inputMore"  name="about" type="text" placeholder="О себе" minlength="2" maxlength="200" required>
                     <span class="popup__input-error inputMore-error"></span>
                 </label>
                 </fieldset>
@@ -69,8 +74,30 @@
         <figure class="popup__container-image">
             <img class="popup__image" src="#" alt="Фото мест-России">
             <figcaption class="popup__title-image"></figcaption>
-            <button class="popup__close-icon"></button>
+            <button class="popup__close-icon" type="button"></button>
         </figure>
+    </div>
+    <div class="popup popup_type_confirmation">
+        <div class="popup__confirm">
+            <button class="popup__close-icon" type="button"></button>
+            <h2 class="popup__title popup__title_areSure">Вы уверены?</h2>
+            <form class="popup__form">
+                <button class="popup__submit popup__submit_areSure" type="submit">Да</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup_type_update-avatar">
+        <div class="popup__avatar">
+            <button class="popup__close-icon" type="button"></button>
+            <h2 class="popup__title">Обновить аватар</h2>
+          <form class="popup__form" name="editAvatarForm" id="editAvatarForm" novalidate> 
+            <label class="popup__label">
+                <input class="popup__input popup__input_type_link-avatar" id="nameAvatarInput" name="avatar" type="url" placeholder="Введите URL" required>
+                <span class="popup__input-error nameAvatarInput-error"></span>
+            </label>
+            <button class="popup__submit" type="submit">Сохранить</button>
+          </form>
+        </div>
     </div>
     <template id="todo-item-template" class="todo-item-template">
         <article class="element">
@@ -78,7 +105,10 @@
             <img class="element__image" src="#" alt="Фото мест-России">
             <div class="element__container">
                 <h2 class="element__title"></h2>
-                <button class="element__smile" type="button"></button>
+                <div class="element__container-like">
+                    <button class="element__smile" type="button"></button>
+                    <p class="element__count-likes"></p>
+                </div>
             </div>
         </article>
     </template>
