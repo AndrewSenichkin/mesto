@@ -28,9 +28,9 @@
 .footer{margin:0 auto;max-width:880px;padding:67px 40px 60px}@media screen and (max-width:449px){.footer{padding:48px 19px 36px}}
 .footer__copyright{color:#545454;font-size:18px;font-weight:400;line-height:22px;margin:0}@media screen and (max-width:449px){.footer__copyright{font-size:14px;line-height:17px}}
 .popup{align-items:center;background:rgba(0,0,0,.5);display:flex;height:100%;justify-content:center;left:0;opacity:0;position:fixed;right:0;top:0;transition:visibility .5s,opacity .4s linear;visibility:hidden}
-.popup__container{background:#fff;border-radius:10px;box-shadow:0 0 25px rgba(0,0,0,.15);box-sizing:border-box;display:flex;flex-direction:column;margin:0 auto;max-width:430px;min-height:330px;position:relative}@media screen and (max-width:549px){.popup__container{max-width:282px;min-height:322px}}
+.popup__container{background:#fff;border-radius:10px;box-shadow:0 0 25px rgba(0,0,0,.15);box-sizing:border-box;display:flex;flex-direction:column;margin:0 auto;max-height:330px;max-width:430px;position:relative}@media screen and (max-width:549px){.popup__container{max-width:282px;min-height:322px}}
 .popup__title{font-size:24px;font-weight:900;line-height:29px;margin:34px 64px 50px 36px}@media screen and (max-width:549px){.popup__title{font-size:18px;line-height:22px;margin:25px 22px 75px}}
-.popup__form{align-items:center;display:flex;flex-direction:column;margin:0 36px}@media screen and (max-width:549px){.popup__form{margin-left:22px;margin-right:22px}}
+.popup__form{align-items:center;display:flex;flex-direction:column;margin:0 36px 36px}@media screen and (max-width:549px){.popup__form{margin-left:22px;margin-right:22px}}
 .popup__fieldset{border:none;display:flex;flex-direction:column;padding:0;row-gap:27px;width:100%}@media screen and (max-width:549px){.popup__fieldset{margin-bottom:23px;margin-left:22px;margin-right:22px;row-gap:26px}}
 .popup__label{cursor:default}
 .popup__input{border:none;border-bottom:1px solid rgba(0,0,0,.2);box-sizing:border-box;font-size:14px;line-height:17px;outline:none;padding:0 0 8px;width:100%}@media screen and (max-width:549px){.popup__input{padding-bottom:9px}}
